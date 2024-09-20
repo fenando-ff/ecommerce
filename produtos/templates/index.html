@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static "css/index.css" %}">
+</head>
+<body>
+
+    <h2 class="titulo">Produtos:</h2>
+    <ul class="lista">
+        {% for produto in produtos %}
+            <li class="item-lista">
+                <div class="info">
+                    <label class="sub-titulo">Nome:</label>
+                    <span class="campo">{{ produto.nome }}</span>
+                </div>
+
+                <div class="info">
+                    <label class="sub-titulo">Descrição:</label>
+                    <span class="campo">{{ produto.descricao }}</span>
+                </div>
+
+                <div class="info">
+                    <label class="sub-titulo">Preço:</label>
+                    <span class="campo">R$ {{ produto.preco }}</span>
+                </div>
+                
+                <div class="info">
+                    <label class="sub-titulo">Categoria:</label>
+                    <span class="campo">{{ produto.categoria }}</span>
+                </div>
+                <a href="{% url 'apagar' produto.id %}"><button>Deletar</button></a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a class="botao" href="{% url "cadastro" %}">Cadastrar produto</a>
+</body>
+</html>

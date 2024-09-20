@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: 62.5% sans-serif;
+    width: 95vh;
+    margin: auto;
+}
+
+.titulo {
+    text-align: center;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+}
+
+.botao {
+    text-align: center;
+}
+
+.lista {
+    display: flex;
+    justify-content: space-around;
+}
+
+.item-lista {
+    font-size: 1rem;
+    list-style: none;
+}

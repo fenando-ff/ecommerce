@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static "css/cadastro.css" %}">
+</head>
+<body>
+
+    <h2>Produtos:</h2>
+    <form method="POST" action="{% url "salvar" %}" class="form">
+        {% csrf_token %}
+                <div class="campao">
+                    <label class="titulo" for="nome">Nome:</label>
+                    <input class="campo" type="text" name="nome">
+                </div>
+
+                <div class="campao">
+                    <label class="titulo" for="descricao">Descrição:</label>
+                    <input class="campo" type="text" name="descricao">
+                </div>
+
+                <div class="campao">
+                    <label class="titulo" for="preco">Preço:</label>
+                    <input class="campo" type="number" name="preco" placeholder="Exemplo: 25,00">
+                </div>
+                
+                <div class="campao">
+                    <label class="titulo" for="categoria">Categoria:</label>
+                    <input class="campo" type="text" name="categoria">
+                </div>
+
+                <button type="submit">Salvar</button>
+    </form>
+</body>
+</html>
